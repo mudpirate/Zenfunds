@@ -17,6 +17,7 @@ const HIDDEN_ROUTES = [
   "/dashboard/addexpense",
   "/dashboard/aianalysis",
   "/dashboard/transactions",
+  "/dashboard/main",
 ];
 
 const geistSans = Geist({

@@ -1,0 +1,20 @@
+start 
+
+install next js npx create-next-app@latest or npx create-next-app@latest . (if folder is already there ) then npm run dev to run the server
+page.tsx is homepage. add extensions  like prisma ,tailwindcss intellisense. setup git and push the commits using sidebar of cursor github
+
+now install prisma and neon 
+
+make a new project and get connection string and add it to env. add it in gitignore nodemodules and env 
+install prisma npm i -D (dev dependaries) prisma then initialize it npx prisma init to make env file and a folder for models in root directory and delete the output in generator client it can cause problems 
+now make model in this app i make user for login and record for keeping records 
+@@ index for faster filtering like where {userId : "user_123"}
+then npx prisma generate , npx prisma migrate dev (to push table in neon). db.ts to make prisma client single instance 
+
+clerk authetication 
+
+sign in and create application and name it then choose framework and install the commands and make a middleware in route.ts then clerk provider wrap it in the layout now make sign in and sign up pages and then add env variables of routes and when we sign in the data goes to neon DB studio
+
+now make navbar 
+
+make a client component with a User button from clerk 

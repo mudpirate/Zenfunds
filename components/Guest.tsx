@@ -19,9 +19,9 @@ const Guest = () => {
   };
 
   return (
-    <div className="font-sans  bg-white dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
+    <div className="font-sans  bg-white  dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
       {/* Hero Section */}
-      <section className="bg-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-green-50  dark:bg-black py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">
             Track. <span className="text-green-500">Learn.</span> Grow.
@@ -34,7 +34,7 @@ const Guest = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button
               onClick={handleClick}
-              className="bg-black hover:bg-gray-900 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
+              className="bg-black hover:bg-gray-900 dark:border-2 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
             >
               Get Started
             </button>
@@ -42,15 +42,15 @@ const Guest = () => {
               onClick={handleClick}
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
             >
-              AI Assistant
+              AI Assistant(soon)
             </button>
           </div>
 
           <Image
-            src="/nom123.jpg"
+            src="/ss2.png"
             alt="Hero Image"
-            width={800}
-            height={500}
+            width={900}
+            height={700}
             className="rounded-2xl shadow-lg mx-auto"
           />
         </div>
@@ -86,7 +86,7 @@ const Guest = () => {
             ].map(({ q, a }, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                className="bg-gray-50 dark:bg-black border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-md transition"
               >
                 <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                   {q}
@@ -99,11 +99,11 @@ const Guest = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-10 px-4  sm:px-6 lg:px-8  dark:bg-gray-900  border-gray-200 dark:border-gray-800">
+      <section className="py-10 px-4  sm:px-6 lg:px-8  dark:bg-black  border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-              <span className="text-black">Reviews</span>
+              <span className="text-black dark:text-white">Reviews</span>
             </h2>
             <p className="mt-4 text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Hear from our happy users who've mastered their money with
@@ -134,7 +134,7 @@ const Guest = () => {
             ].map(({ name, initial, quote }, idx) => (
               <div
                 key={idx}
-                className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow hover:shadow-lg transition"
+                className="relative bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow hover:shadow-lg transition"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-black text-white flex items-center justify-center rounded-full font-bold shadow">

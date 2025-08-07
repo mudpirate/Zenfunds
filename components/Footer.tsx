@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-emerald-50 dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 border-t border-gray-100/50 dark:border-gray-700/50 mt-16">
+    <footer className="relative overflow-hidden bg-white dark:bg-black border-t border-gray-100/50 dark:border-gray-700/50 mt-16">
       {/* Gradient top accent line */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8 py-10">
@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo and description */}
           <div className="space-y-4 text-center md:text-left">
             <div className="inline-flex items-center gap-2">
-              <h2 className="text-xl font-bold bg-black bg-clip-text text-transparent">
+              <h2 className="text-xl font-bold bg-black dark:text-white bg-clip-text text-transparent">
                 Zenfunds AI
               </h2>
             </div>
@@ -64,7 +64,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-            © {new Date().getFullYear()} ExpenseTracker AI. All rights reserved.
+            © {new Date().getFullYear()} Zenfunds. All rights reserved.
           </p>
           <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium">
             <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></span>

@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useUser } from "@clerk/nextjs";
+import { useUser, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import logo from "@/public/newlogo-removebg-preview.png";
 import { MdDashboard } from "react-icons/md";
-import { FaMoneyBillWave } from "react-icons/fa";
+import { FaMoneyBillWave, FaHistory } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
-import { FaHistory } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,16 +28,20 @@ const Sidebar = () => {
     },
     {
       label: "Transaction History",
-      href: "/transactions",
+      href: "/dashboard/transactions",
       logo: <FaHistory />,
     },
   ];
 
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close sidebar on mobile after clicking link
+  };
+
   return (
     <div className="flex">
-      {/* Mobile Menu Toggle Button */}
+      {/* Mobile menu button */}
       <button
-        className="md:hidden p-4 focus:outline-none z-50"
+        className="md:hidden p-4 fixed top-4 left-4 z-50 bg-white rounded-full shadow"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -46,67 +49,61 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <aside
-        className={`bg-green-100 rounded-zl text-white w-64 px-6 py-8 min-h-screen transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-          md:translate-x-0 fixed md:static top-0 left-0 z-40 flex flex-col justify-between`}
+        className={`bg-green-950 text-white  h-auto w-63 px-6 py-8 min-h-screen transition-transform duration-300 ease-in-out 
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} 
+        md:translate-x-0 fixed md:static top-0  left-0 z-40 flex flex-col justify-between`}
       >
-        {/* Brand / User Profile */}
-        <div className="flex flex-col justify-center items-center gap-3">
-          {/* Brand */}
-          <Link href="/">
-            <div className="text-3xl flex gap-2 justify-center items-center font-extrabold text-black mb-8">
-              <Image alt="l" src={logo} width={40} height={30} />
-              <span className="text-green-800">Zenfunds</span>
-            </div>
+        {/* Logo and navigation */}
+        <div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 mb-8">
+            <Image alt="Logo" src={logo} width={40} height={30} />
+            <span className="text-white text-2xl font-bold">ZenFunds</span>
           </Link>
 
-          {/* User Profile */}
-
-          {/* Navigation */}
-          <nav className="flex flex-col gap-2">
+          {/* Navigation links */}
+          <nav className="flex flex-col gap-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-4 flex gap-3  text-black items-center py-2 rounded-lg hover:bg-green-300 transition-colors font-medium"
+                className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-green-800 transition"
+                onClick={handleLinkClick}
               >
-                <span>{item.logo}</span>
+                {item.logo}
                 <span>{item.label}</span>
               </Link>
             ))}
           </nav>
 
-          <div className="px-4 py-2 mt-10 rounded-xl  border-black  dark:bg-black/30 backdrop-blur-md   dark:border-gray-700  transition-all  max-w-xl mx-auto">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-              Have a question?
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300">
-              send us a message and we will contact you in no time
+          {/* Glassmorphism Info Box */}
+          <div className="mt-10 p-4 rounded-xl bg-white/10 backdrop-blur-lg">
+            <h2 className="text-lg font-semibold">Have a question?</h2>
+            <p className="text-sm text-white/80">
+              Send us a message and we’ll contact you shortly.
             </p>
-          </div>
-          <div className="flex items-center gap-3 p-3 rounded-lg ">
-            {user?.imageUrl && (
-              <Image
-                src={user.imageUrl}
-                alt="User Avatar"
-                width={40}
-                height={40}
-                className="rounded-full object-cover"
-              />
-            )}
-            <div>
-              <p className="text-sm  text-black font-semibold">
-                {user?.fullName}
-              </p>
-              <p className="text-xs text-black">
-                {user?.primaryEmailAddress?.emailAddress}
-              </p>
-            </div>
           </div>
         </div>
 
-        {/* Optional footer or logout button */}
-        <div className="text-xs text-gray-500 text-center mt-10 md:mt-0">
+        {/* User info */}
+        <div className="mt-10 flex items-center  gap-3">
+          <UserButton
+            appearance={{
+              elements: {
+                avatarBox: "w-12 h-12 hover:scale-105 transition",
+              },
+            }}
+          />
+          <div className="flex flex-col">
+            <p className="text-sm font-medium">{user?.fullName}</p>
+            <p className="text-xs text-white/70">
+              {user?.primaryEmailAddress?.emailAddress}
+            </p>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-xs text-white/50 mt-96 text-center">
           © 2025 ZenFunds
         </div>
       </aside>

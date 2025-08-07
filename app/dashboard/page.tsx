@@ -1,65 +1,58 @@
+import RecordChart from "@/components/RecordChart";
 import { currentUser } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+import ExpenseStats from "@/components/ExpenseStats";
 
-export default async function home() {
+export default async function Home() {
+  const user = await currentUser();
+
   return (
-    <div className="max-w-7xl  border flex flex-col min-h-screen px-6 py-5">
-      <div className="border">
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo
-        illo, aperiam tempore a ducimus atque dolore libero necessitatibus!
-        Nobis aperiam dignissimos illo itaque eaque quidem rem ex dicta
-        accusamus qui nesciunt consequuntur veritatis non, debitis quasi
-        aspernatur natus doloribus!{" "}
-      </div>
-      <div className="flex mt-3">
-        <div className="border flex-1">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet id
-          consequatur aspernatur deserunt minima beatae tempora maiores dolorem
-          ducimus, quasi tempore alias explicabo, aliquam cupiditate quas quos
-          provident quae neque similique aliquid. Veritatis qui sit, neque
-          dolores recusandae illo unde cum quas beatae vero non molestiae
-          perspiciatis porro ipsam maxime rem distinctio ullam labore
-          laboriosam. Magni est, tenetur odio ipsam, quos, explicabo mollitia
-          iure tempore quas aut autem! Mollitia maxime consectetur ad ullam
-          optio veniam cumque natus, non alias corporis. Fugit molestias at,
-          natus placeat non rem et alias eos perspiciatis corrupti laboriosam
-          amet voluptatibus! Eaque ullam dolorum illo itaque.
+    <div className="max-w-7xl  px-2 py-5 min-h-screen bg-white">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 px-3 md:px-5 mb-8">
+        <div>
+          <h1 className="text-2xl md:text-3xl font-bold font-sans">
+            Welcome back, <span>{user?.fullName}</span>
+          </h1>
+          <p className="mt-1 font-semibold text-gray-500">
+            Here's your overview of your expenses
+          </p>
         </div>
-        <div className="border flex-1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-          accusamus inventore nisi deleniti cupiditate non expedita, culpa
-          labore, voluptas minima velit harum quidem, ullam id magnam excepturi
-          ut nemo suscipit voluptatem neque. Corporis molestiae doloremque sed
-          dolorem incidunt iure eligendi impedit, accusamus magni vitae dolorum
-          neque sit, magnam aut expedita quia nesciunt atque similique.
-          Voluptatum laborum atque enim temporibus impedit placeat nostrum
-          maxime necessitatibus tempora veniam fugit, laudantium illo ullam quia
-          ipsa incidunt qui harum quos repudiandae neque sint molestias? Amet,
-          voluptatibus unde ducimus exercitationem ratione, adipisci ab eum
-          doloribus similique rerum nam quis quam fugiat error distinctio
-          consequuntur autem!
+
+        <div className="text-sm font-medium text-gray-600">
+          <p>
+            Joined:{" "}
+            {user?.createdAt &&
+              new Date(user.createdAt).toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+          </p>
+          <p>
+            Last active:{" "}
+            {user?.lastActiveAt
+              ? new Date(user.lastActiveAt).toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })
+              : "Today"}
+          </p>
         </div>
       </div>
 
-      <div className="border mt-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptates
-        repudiandae qui corrupti doloribus, beatae at doloremque voluptas,
-        minima reprehenderit vel assumenda sapiente enim? Corporis obcaecati
-        molestias, aperiam a mollitia, explicabo eaque doloribus facilis sit
-        repellendus possimus, quo qui molestiae. Fugiat repellat quisquam neque
-        quibusdam accusamus quidem nulla quasi est, nihil reiciendis, expedita
-        impedit, minus ratione tenetur commodi dolor natus inventore doloribus
-        id laborum harum reprehenderit eveniet! Ab tempore totam, debitis labore
-        asperiores deserunt perferendis error id, voluptates quae ducimus.
-        Laboriosam dolore nobis dolorem voluptatem nihil rerum distinctio
-        necessitatibus hic et eos? Ipsam amet voluptates quidem nesciunt
-        repellendus esse deserunt, dolore veritatis iure, quasi impedit. Vel eos
-        vitae possimus assumenda maxime omnis natus rerum soluta repellat, velit
-        laudantium tempora nesciunt tempore amet saepe ratione unde quia!
-        Debitis ipsam eos corrupti, laborum minima ab provident, perferendis
-        perspiciatis itaque eaque doloremque ea veritatis autem eveniet dolore.
-        Distinctio laborum rem voluptas aut nulla?
+      {/* Charts */}
+      <div className="w-full mb-6">
+        <div className="rounded-xl  bg-white p-4">
+          <RecordChart />
+        </div>
+      </div>
+
+      {/* Expense Stats */}
+      <div className="w-full mb-6">
+        <div className="rounded-xl bg-white p-4">
+          <ExpenseStats />
+        </div>
       </div>
     </div>
   );

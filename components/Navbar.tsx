@@ -19,8 +19,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="p-5 bg-green-50">
-      <nav className="top-0 z-50 border-1  border-gray-200 rounded-3xl bg-white  dark:bg-black backdrop-blur-xl   dark:border-gray-600/50 shadow-lg shadow-gray-900/5 dark:shadow-black/30">
+    <div className="p-5 bg-green-50 dark:bg-black ">
+      <nav className="top-0 z-50 border-2  border-gray-200 rounded-3xl bg-white  dark:bg-black backdrop-blur-xl   dark:border-white shadow-lg shadow-gray-900/5 dark:shadow-black/30">
         <div className="max-w-7xl mx-auto px-8  sm:px-10 lg:px-12">
           <div className="flex items-center justify-between h-14  sm:h-17">
             {/* Logo Section */}
@@ -44,7 +44,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center justify-center gap-2 w-full">
               <Link
                 href="/"
-                className="relative border-2 rounded-full text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-1  text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
+                className="relative rounded-full text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-emerald-400 px-3 lg:px-4 py-1  text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
               >
                 <span className="relative z-10 text-xl font-bold">Home</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
@@ -52,7 +52,7 @@ export default function Navbar() {
 
               <Link
                 href="/about"
-                className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-1 border-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
+                className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-emerald-400 px-3 lg:px-4 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
               >
                 <span className="relative z-10 text-xl font-bold">About</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
@@ -60,14 +60,14 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-1 border-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
+                className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-emerald-400 px-3 lg:px-4 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
               >
                 <span className="relative z-10 text-xl font-bold">Contact</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               </Link>
               <Link
                 href="/contact"
-                className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-1 border-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
+                className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-emerald-400 px-3 lg:px-4 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
               >
                 <span className="relative z-10 text-xl font-bold">
                   Features

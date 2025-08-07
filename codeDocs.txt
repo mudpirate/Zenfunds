@@ -17,4 +17,9 @@ sign in and create application and name it then choose framework and install the
 
 now make navbar 
 
-make a client component with a User button from clerk 
+make a client component with a User button from clerk add some styles and hide navbar from some layouts like dashboard by using pathname hook and make it client side layout 
+now make dashboard pages with a layout of sidebar outside 
+
+#css tricks 
+
+make the outside container max-w-7xl ad give a width of full view port  and use px-10 then make div inside it and give w-full

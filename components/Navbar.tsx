@@ -69,9 +69,6 @@ export default function Navbar() {
                 href="/contact"
                 className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-emerald-400 px-3 lg:px-4 py-1 rounded-full text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
               >
-                <span className="relative z-10 text-xl font-bold">
-                  Features
-                </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               </Link>
             </div>

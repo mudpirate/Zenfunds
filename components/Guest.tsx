@@ -17,6 +17,13 @@ const Guest = () => {
       router.push("/sign-in");
     }
   };
+  const handleClick2 = () => {
+    if (isSignedIn) {
+      router.push("/dashboard/aianalysis");
+    } else {
+      router.push("/sign-in");
+    }
+  };
 
   return (
     <div className="font-sans  bg-white  dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
@@ -39,10 +46,10 @@ const Guest = () => {
               Get Started
             </button>
             <button
-              onClick={handleClick}
+              onClick={handleClick2}
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
             >
-              AI Assistant(soon)
+              AI Assistant
             </button>
           </div>
 

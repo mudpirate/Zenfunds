@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-white dark:bg-black border-t border-gray-100/50 dark:border-gray-700/50 mt-16">
+    <footer className="relative overflow-hidden bg-white dark:bg-black border-t border-gray-100/50 dark:border-gray-700/50 ">
       {/* Gradient top accent line */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6  lg:px-8 py-10">

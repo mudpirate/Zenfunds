@@ -71,18 +71,16 @@ const RecordChart = async () => {
   }
 
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-4 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+    <div className="bg-white/80 dark:bg-black backdrop-blur-sm p-4 sm:p-4 rounded-2xl shadow-xl border  hover:shadow-2xl">
       <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-800 rounded-xl flex items-center justify-center shadow-lg">
-          <span className="text-white text-sm sm:text-lg">
-            <IoBarChartSharp />
-          </span>
-        </div>
         <div>
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg sm:text-3xl flex justify-center gap-2 items-center font-bold text-gray-900 dark:text-gray-100">
+            <span className="text-3xl">
+              <IoBarChartSharp />
+            </span>
             Expense Chart
           </h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text- text-gray-500 dark:text-gray-400 mt-0.5">
             Visual representation of your spending
           </p>
         </div>

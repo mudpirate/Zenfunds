@@ -6,11 +6,11 @@ export default async function Home() {
   const user = await currentUser();
 
   return (
-    <div className="max-w-7xl  px-2 py-5 min-h-screen bg-white">
+    <div className="max-w-7xl  px-2 py-5 min-h-screen bg-white dark:bg-black ">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 px-3 md:px-5 mb-8">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold font-sans">
+          <h1 className="text-2xl md:text-3xl font-bold dark:text-white font-sans">
             Welcome back, <span>{user?.fullName}</span>
           </h1>
           <p className="mt-1 font-semibold text-gray-500">

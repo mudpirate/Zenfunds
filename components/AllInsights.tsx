@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { getAIInsights } from "@/app/actions/getAllInsights";
 import { generateInsightAnswer } from "@/app/actions/generateInsightAnswers";
+import { FaRobot } from "react-icons/fa";
 
 interface InsightData {
   id: string;
@@ -114,7 +115,7 @@ const AIInsights = () => {
       case "info":
         return "ℹ️";
       default:
-        return "🤖";
+        return <FaRobot />;
     }
   };
 
@@ -169,7 +170,9 @@ const AIInsights = () => {
       <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50">
         <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white text-sm sm:text-lg">🤖</span>
+            <span className="text-white text-sm sm:text-lg">
+              <FaRobot />
+            </span>
           </div>
           <div className="flex-1">
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
@@ -218,14 +221,11 @@ const AIInsights = () => {
   }
 
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+    <div className="bg-white/80 min-h-screen dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white text-sm sm:text-lg">🤖</span>
-          </div>
           <div>
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
+            <h3 className="text-lg sm:text-3xl font-bold text-gray-900 dark:text-gray-100">
               AI Insights
             </h3>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
@@ -245,7 +245,7 @@ const AIInsights = () => {
           </div>
           <button
             onClick={loadInsights}
-            className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200"
+            className="w-7 h-7 sm:w-8 sm:h-8 bg-white border border-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200"
             disabled={isLoading}
           >
             <span className="text-sm">🔄</span>
@@ -253,7 +253,7 @@ const AIInsights = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
+      <div className="grid grid-cols-1 gap-3 sm:gap-4">
         {insights.map((insight) => {
           const currentAnswer = aiAnswers.find(
             (a) => a.insightId === insight.id
@@ -262,15 +262,13 @@ const AIInsights = () => {
           return (
             <div
               key={insight.id}
-              className={`relative overflow-hidden rounded-xl p-3 sm:p-4 border-l-4 hover:shadow-lg transition-all duration-200 ${getInsightColors(
-                insight.type
-              )}`}
+              className={`relative overflow-hidden rounded-xl p-3 sm:p-4 border hover:shadow-lg transition-all duration-200 `}
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 sm:gap-3 mb-2">
                     <div
-                      className={`w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center ${
+                      className={`w-6 h-6 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center ${
                         insight.type === "warning"
                           ? "bg-yellow-100 dark:bg-yellow-900/50"
                           : insight.type === "success"
@@ -356,14 +354,11 @@ const AIInsights = () => {
       <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
           <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-emerald-50 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
-              <span className="text-sm">🧠</span>
-            </div>
             <span className="font-medium text-xs">Powered by AI analysis</span>
           </div>
           <button
             onClick={loadInsights}
-            className="px-3 py-1.5 bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
+            className="px-3 py-1.5 bg-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
           >
             <span className="sm:hidden">Refresh</span>
             <span className="hidden sm:inline">Refresh Insights →</span>

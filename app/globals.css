@@ -1,6 +1,6 @@
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
-@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 
 :root {
   --background: #ffffff;

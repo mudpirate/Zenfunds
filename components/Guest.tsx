@@ -64,7 +64,7 @@ const Guest = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8  dark:bg-gray-950  border-gray-200 dark:border-gray-800">
+      <section className="py-16 px-4 sm:px-6 lg:px-8  dark:bg-black  border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">

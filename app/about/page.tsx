@@ -18,7 +18,7 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white/80 dark:bg-black backdrop-blur-sm relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white dark:bg-black backdrop-blur-sm relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
             Transforming Financial Management with{" "}
@@ -132,7 +132,7 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 px-8 bg-white/80 dark:bg-black backdrop-blur-sm relative overflow-hidden">
+      <section className="py-20 px-8 bg-white dark:bg-black backdrop-blur-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-full blur-2xl"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-full blur-2xl"></div>
 

@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Footer from "./Footer";
 
 const Guest = () => {
+  const [loading, setLoading] = useState<Boolean>(false);
   const { isSignedIn } = useUser();
   const router = useRouter();
 
@@ -24,6 +27,11 @@ const Guest = () => {
       router.push("/sign-in");
     }
   };
+
+  useEffect(() => {
+    router.prefetch("/dashboard/main");
+    router.prefetch("/dashboard/aianalysis");
+  }, [router]);
 
   return (
     <div className="font-sans  bg-white  dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
@@ -49,7 +57,7 @@ const Guest = () => {
               onClick={handleClick2}
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
             >
-              AI Assistant
+              AI Analysis
             </button>
           </div>
 

@@ -9,7 +9,7 @@ const ContactPage = () => {
 
       {/* Contact Information Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 bg-green-50 sm:px-6 md:px-8  dark:bg-black backdrop-blur-sm relative overflow-hidden">
-        <div className="max-w-6xl bg-green-50mx-auto">
+        <div className="max-w-6xl bg-green-50 mx-auto">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
               Multiple Ways to{" "}

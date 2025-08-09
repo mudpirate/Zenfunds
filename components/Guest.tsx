@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Footer from "./Footer";
 
 const Guest = () => {
+  const [loading, setLoading] = useState<Boolean>(false);
   const { isSignedIn } = useUser();
   const router = useRouter();
 
@@ -24,6 +27,11 @@ const Guest = () => {
       router.push("/sign-in");
     }
   };
+
+  useEffect(() => {
+    router.prefetch("/dashboard/main");
+    router.prefetch("/dashboard/aianalysis");
+  }, [router]);
 
   return (
     <div className="font-sans  bg-white  dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
@@ -49,7 +57,7 @@ const Guest = () => {
               onClick={handleClick2}
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5"
             >
-              AI Assistant
+              AI Analysis
             </button>
           </div>
 
@@ -64,7 +72,7 @@ const Guest = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8  dark:bg-gray-950  border-gray-200 dark:border-gray-800">
+      <section className="py-16 px-4 sm:px-6 lg:px-8  dark:bg-black  border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">

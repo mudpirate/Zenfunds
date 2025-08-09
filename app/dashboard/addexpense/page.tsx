@@ -66,8 +66,8 @@ const AddRecord = () => {
   };
 
   return (
-    <div className=" min-h-screen px-3 py-2 w-[78vw]">
-      <div className="bg-white/80 mt-2 h-full w-full dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-lg  dark:border-gray-700/50 hover:shadow-2xl">
+    <div className=" bg-white min-h-screen px-3 py-2 ">
+      <div className="bg-white mt-2 h-full w-full dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-lg  dark:border-gray-700/50 hover:shadow-2xl">
         <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-20">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-800 rounded-xl flex items-center justify-center shadow-lg">
             <span className="text-white text-sm sm:text-lg">💳</span>

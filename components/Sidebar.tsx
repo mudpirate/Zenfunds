@@ -21,11 +21,7 @@ const Sidebar = () => {
       href: "/dashboard/addexpense",
       logo: <FaMoneyBillWave />,
     },
-    {
-      label: "AI Analysis",
-      href: "/dashboard/aianalysis",
-      logo: <BsGraphUp />,
-    },
+
     {
       label: "Transaction History",
       href: "/dashboard/transactions",

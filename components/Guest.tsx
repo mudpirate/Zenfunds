@@ -19,7 +19,7 @@ const Guest = () => {
   };
   const handleClick2 = () => {
     if (isSignedIn) {
-      router.push("/dashboard/aianalysis");
+      router.push("/aiassitant");
     } else {
       router.push("/sign-in");
     }

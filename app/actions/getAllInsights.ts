@@ -25,7 +25,7 @@ export async function getAIInsights(): Promise<AIInsight[]> {
       orderBy: {
         createdAt: "desc",
       },
-      take: 50, // Limit to recent 50 expenses for analysis
+      take: 20, // Limit to recent 50 expenses for analysis
     });
 
     if (expenses.length === 0) {

@@ -167,18 +167,16 @@ const AIInsights = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50">
+      <div className=" dark:bg-black backdrop-blur-sm p-4 sm:p-6   dark:border-gray-700/50">
         <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white text-sm sm:text-lg">
+          <div className="flex flex-col justify-center w-full items-center">
+            <span>
               <FaRobot />
             </span>
-          </div>
-          <div className="flex-1">
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
-              AI Insights
+            <h3 className="text-lg text-center sm:text-4xl  text-gray-900 dark:text-gray-100">
+              Your Personalized AI Assitant
             </h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-0.5">
               Analyzing your spending patterns
             </p>
           </div>
@@ -199,7 +197,10 @@ const AIInsights = () => {
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
                 <div className="flex-1 space-y-2">
-                  <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-3/4"></div>
+                  <div className="h-3 bg-gray-200 dark:bg-gray-600 dark:text-green-500   rounded-lg w-3/4">
+                    {" "}
+                    AI is analyzing your financial patterns...
+                  </div>
                   <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-full"></div>
                   <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-2/3"></div>
                 </div>
@@ -211,9 +212,6 @@ const AIInsights = () => {
         <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700 text-center">
           <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
             <div className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
-            <span className="text-xs sm:text-sm">
-              AI is analyzing your financial patterns...
-            </span>
           </div>
         </div>
       </div>
@@ -221,16 +219,13 @@ const AIInsights = () => {
   }
 
   return (
-    <div className="bg-white/80 min-h-screen dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
+    <div className="bg-white/80 min-h-screen dark:bg-black backdrop-blur-sm p-4 sm:p-6  shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
       <div className="flex items-center justify-between mb-4 sm:mb-6">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div>
-            <h3 className="text-lg sm:text-3xl font-bold text-gray-900 dark:text-gray-100">
-              AI Insights
+        <div className="flex items-center  gap-2 sm:gap-3">
+          <div className="flex flex-col justify-center w-full items-center">
+            <h3 className="text-lg text-center   text-gray-900 dark:text-gray-100">
+              Here are your reports
             </h3>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-              AI financial analysis
-            </p>
           </div>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
@@ -245,10 +240,10 @@ const AIInsights = () => {
           </div>
           <button
             onClick={loadInsights}
-            className="w-7 h-7 sm:w-8 sm:h-8 bg-white border border-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200"
-            disabled={isLoading}
+            className="px-3 py-1.5 bg-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            <span className="text-sm">🔄</span>
+            <span className="sm:hidden">Refresh</span>
+            <span className="hidden sm:inline">Refresh Insights</span>
           </button>
         </div>
       </div>

@@ -6,7 +6,7 @@ export default async function Home() {
   const user = await currentUser();
 
   return (
-    <div className=" px-8 sm:px-2 py-10 sm:py-5 min-h-screen bg-white dark:bg-black ">
+    <div className=" px-1 sm:px-2 py-8 sm:py-5 min-h-screen bg-white dark:bg-black ">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-4 px-3 md:px-5 mb-8">
         <div>

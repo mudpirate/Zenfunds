@@ -18,7 +18,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <div className="text-sm font-medium text-gray-600">
+        <div className="text-sm font-medium dark:text-white text-gray-600">
           <p>
             Joined:{" "}
             {user?.createdAt &&
@@ -43,14 +43,14 @@ export default async function Home() {
 
       {/* Charts */}
       <div className="w-full mb-6">
-        <div className="rounded-xl  bg-white p-4">
+        <div className="rounded-xl dark:bg-black  bg-white p-4">
           <RecordChart />
         </div>
       </div>
 
       {/* Expense Stats */}
       <div className="w-full mb-6">
-        <div className="rounded-xl bg-white p-4">
+        <div className="rounded-xl dark:bg-black bg-white p-4">
           <ExpenseStats />
         </div>
       </div>

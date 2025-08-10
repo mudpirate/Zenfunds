@@ -51,6 +51,7 @@ const AIInsights = () => {
   };
 
   const handleActionClick = async (insight: InsightData) => {
+    loadInsights();
     if (!insight.action) return;
 
     // Check if answer is already loading or exists
@@ -173,46 +174,29 @@ const AIInsights = () => {
             <span>
               <FaRobot />
             </span>
-            <h3 className="text-lg text-center sm:text-4xl  text-gray-900 dark:text-gray-100">
+            <h3 className="text-lg text-center font-bold sm:text-4xl  text-gray-900 dark:text-gray-100">
               Your Personalized AI Assitant
             </h3>
+
             <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-0.5">
               Analyzing your spending patterns
             </p>
-          </div>
-          <div className="flex items-center gap-1 sm:gap-2">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
-            <span className="text-xs sm:text-sm text-emerald-600 dark:text-emerald-400 font-medium hidden sm:block">
-              Analyzing...
-            </span>
-          </div>
-        </div>
-
-        <div className="space-y-3 sm:space-y-4">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className="animate-pulse bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 p-3 sm:p-4 rounded-xl border border-gray-100 dark:border-gray-600"
-            >
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-                <div className="flex-1 space-y-2">
-                  <div className="h-3 bg-gray-200 dark:bg-gray-600 dark:text-green-500   rounded-lg w-3/4">
-                    {" "}
-                    AI is analyzing your financial patterns...
-                  </div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-full"></div>
-                  <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-2/3"></div>
-                </div>
-              </div>
+            <div className="flex items-center gap-1  mt-10 md:mt-30 border sm:gap-2">
+              <button
+                onClick={loadInsights}
+                className="px-3 py-1.5 md:w-100 md:h-16 bg-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
+              >
+                <span className="sm:hidden">Generate your reports </span>
+                <span className="hidden sm:inline  text-2xl">
+                  Generate your reports
+                </span>
+              </button>
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700 text-center">
-          <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-            <div className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
-          </div>
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400"></div>
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ import RecordHistory from "@/components/RecordHistory";
 
 function page() {
   return (
-    <div>
+    <div className=" py-15 dark:bg-black">
       <RecordHistory />
     </div>
   );

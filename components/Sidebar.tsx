@@ -37,7 +37,7 @@ const Sidebar = () => {
     <div className="flex">
       {/* Mobile menu button */}
       <button
-        className="md:hidden p-3 fixed top-0 right-0 bg-white text-black rounded-full shadow"
+        className="md:hidden p-3 fixed top-3 right-0 bg-white text-black rounded-full shadow"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}

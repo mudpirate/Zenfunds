@@ -19,7 +19,7 @@ const ExpenseStats = async () => {
     const averageExpense = validRecord / validDays;
 
     return (
-      <div className="bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-2xl shadow-md border border-gray-200 dark:border-zinc-700">
+      <div className="bg-white dark:bg-black p-6 sm:p-8 rounded-2xl shadow-md border border-gray-200 dark:border-zinc-700">
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
           <div className="text-2xl sm:text-3xl text-primary-foreground bg-primary p-2 rounded-full shadow">

@@ -78,11 +78,7 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group relative bg-white/80 dark:bg-black backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
-                  <span className="text-white text-xl">🤖</span>
-                </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                   AI-Powered Insights
                 </h3>
@@ -97,9 +93,6 @@ const AboutPage = () => {
             <div className="group relative bg-white/80 dark:bg-black backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
-                  <span className="text-white text-xl">✨</span>
-                </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                   Smart Categorization
                 </h3>
@@ -114,9 +107,6 @@ const AboutPage = () => {
             <div className="group relative bg-white/80 dark:bg-black backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-12 h-12 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg mb-6">
-                  <span className="text-white text-xl">📊</span>
-                </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
                   Intelligent Dashboard
                 </h3>

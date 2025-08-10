@@ -42,9 +42,7 @@ export default function RootLayout({
     <ThemeProvider>
       <ClerkThemeProvider>
         <html lang="en">
-          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
+          <body>
             {!shouldHideNavbar && <Navbar />}
             {children}
           </body>

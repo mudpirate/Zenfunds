@@ -9,7 +9,7 @@ const ContactPage = () => {
 
       {/* Contact Information Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 bg-green-50 sm:px-6 md:px-8  dark:bg-black backdrop-blur-sm relative overflow-hidden">
-        <div className="max-w-6xl bg-green-50 mx-auto">
+        <div className="max-w-6xl bg-green-50 dark:bg-black mx-auto">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
               Multiple Ways to{" "}
@@ -27,9 +27,6 @@ const ContactPage = () => {
             <div className="group relative bg-white/80 dark:bg-black backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
-                  <span className="text-white text-lg sm:text-xl">✉️</span>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
                   Email Support
                 </h3>
@@ -53,9 +50,6 @@ const ContactPage = () => {
             <div className="group relative bg-white/80 dark:bg-black backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center">
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
-                  <span className="text-white text-lg sm:text-xl">📞</span>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
                   Phone Support
                 </h3>
@@ -76,9 +70,6 @@ const ContactPage = () => {
             <div className="group relative bg-white/80 dark:bg-black   backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-200 hover:-translate-y-1 text-center sm:col-span-2 lg:col-span-1">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative z-10">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-teal-500 via-emerald-500 to-green-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg mb-4 sm:mb-6 mx-auto">
-                  <span className="text-white text-lg sm:text-xl">📍</span>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-gray-100">
                   Office Location
                 </h3>
@@ -112,9 +103,6 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             <div className="bg-white/80 dark:bg-black backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white text-xs sm:text-sm">🕒</span>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
                   Support Hours
                 </h3>
@@ -143,9 +131,6 @@ const ContactPage = () => {
 
             <div className="bg-white/80 dark:bg-black backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-lg border border-gray-100/50 dark:border-gray-700/50">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 via-teal-500 to-emerald-500 rounded-md sm:rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white text-xs sm:text-sm">❓</span>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-gray-100">
                   Quick Help
                 </h3>

@@ -5,7 +5,7 @@ import { suggestCategory } from "@/app/actions/suggestCategory";
 
 const AddRecord = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [amount, setAmount] = useState(50); // Default value for expense amount
+  const [amount, setAmount] = useState<string | number>(""); // Default value for expense amount
   const [alertMessage, setAlertMessage] = useState<string | null>(null); // State for alert message
   const [alertType, setAlertType] = useState<"success" | "error" | null>(null); // State for alert type
   const [isLoading, setIsLoading] = useState(false); // State for loading spinner
@@ -29,7 +29,7 @@ const AddRecord = () => {
       setAlertMessage("Expense record added successfully!");
       setAlertType("success"); // Set alert type to success
       formRef.current?.reset();
-      setAmount(50); // Reset the amount to the default value
+      setAmount(""); // Reset the amount to the default value
       setCategory(""); // Reset the category
       setDescription(""); // Reset the description
     }
@@ -66,8 +66,8 @@ const AddRecord = () => {
   };
 
   return (
-    <div className=" bg-white min-h-screen px-3 py-2 ">
-      <div className="bg-white mt-2 h-full w-full dark:bg-gray-800/80 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-lg  dark:border-gray-700/50 hover:shadow-2xl">
+    <div className=" bg-white min-h-screen dark:bg-black px-3 py-13 ">
+      <div className=" mt-2 h-full w-full dark:bg-black backdrop-blur-sm p-8 sm:p-6 rounded-2xl shadow-lg  dark:border-gray-700/50 hover:shadow-2xl">
         <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-20">
           <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-800 rounded-xl flex items-center justify-center shadow-lg">
             <span className="text-white text-sm sm:text-lg">💳</span>
@@ -248,7 +248,7 @@ const AddRecord = () => {
                     max="10000"
                     step="1.00"
                     value={amount}
-                    onChange={(e) => setAmount(parseFloat(e.target.value))}
+                    onChange={(e) => setAmount(Number(e.target.value))}
                     className="w-full pl-6 pr-3 py-2.5 bg-white/70 dark:bg-gray-800/70 border-2 border-gray-200/80 dark:border-gray-600/80 rounded-xl focus:ring-2 focus:ring-emerald-500/30 focus:bg-white dark:focus:bg-gray-700/90 focus:border-emerald-400 dark:focus:border-emerald-400 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 text-sm font-semibold shadow-sm hover:shadow-md transition-all duration-200"
                     placeholder="0.00"
                     required

@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="  xl:pl-83 pt-3 bg-green-50 dark:bg-black ">
+    <div className="  flex justify-center bg-green-50 w-full pt-3  dark:bg-black ">
       <nav className="top-0 max-w-6xl w-[90vw] ml-6  z-50 border-2  border-gray-200 rounded-3xl bg-white  dark:bg-black backdrop-blur-xl   dark:border-white shadow-lg shadow-gray-900/5 dark:shadow-black/30">
         <div className="max-w-6xl  mx-auto px-8  sm:px-10 lg:px-12">
           <div className="flex items-center justify-between h-14  sm:h-17">
@@ -150,14 +150,13 @@ export default function Navbar() {
                 : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-600/50 mt-2 shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl  dark:border-gray-600/50 mt-2 ">
               {/* Mobile Navigation Links */}
               <Link
                 href="/"
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 text-sm font-medium transition-all duration-200 active:scale-95"
                 onClick={closeMobileMenu}
               >
-                <span className="text-base">🏠</span>
                 <span>Home</span>
               </Link>
               <Link
@@ -165,7 +164,6 @@ export default function Navbar() {
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 text-sm font-medium transition-all duration-200 active:scale-95"
                 onClick={closeMobileMenu}
               >
-                <span className="text-base">ℹ️</span>
                 <span>About</span>
               </Link>
               <Link
@@ -173,7 +171,6 @@ export default function Navbar() {
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 text-sm font-medium transition-all duration-200 active:scale-95"
                 onClick={closeMobileMenu}
               >
-                <span className="text-base">📞</span>
                 <span>Contact</span>
               </Link>
 
@@ -182,10 +179,10 @@ export default function Navbar() {
                 <SignedOut>
                   <SignInButton>
                     <button
-                      className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
+                      className="w-full  hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
                       onClick={closeMobileMenu}
                     >
-                      <span>Sign In</span>
+                      <span className="font-bold text-black">Sign In</span>
                       <svg
                         className="w-4 h-4"
                         fill="none"
@@ -204,7 +201,7 @@ export default function Navbar() {
                 </SignedOut>
 
                 <SignedIn>
-                  <div className="flex items-center justify-center p-3 rounded-xl bg-gradient-to-r from-emerald-100/50 to-green-100/50 dark:from-emerald-900/20 dark:to-green-900/20 backdrop-blur-sm border border-emerald-200/30 dark:border-emerald-700/30">
+                  <div className="flex items-center justify-center p-3 rounded-xl  dark:from-emerald-900/20 dark:to-green-900/20 backdrop-blur-sm  dark:border-emerald-700/30">
                     <UserButton
                       appearance={{
                         elements: {

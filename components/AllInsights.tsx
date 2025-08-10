@@ -162,7 +162,7 @@ const AIInsights = () => {
   };
 
   return (
-    <div className="bg-white/80 dark:bg-black/80 backdrop-blur-sm min-h-screen p-4 sm:p-6 shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
+    <div className="bg-white/80 dark:bg-black backdrop-blur-sm min-h-screen p-4 sm:p-6 shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
       {/* Header Section */}
       <div className="flex flex-col justify-center w-full items-center mb-8">
         <div className="text-4xl sm:text-5xl mb-4 text-emerald-600 dark:text-emerald-400">
@@ -228,7 +228,7 @@ const AIInsights = () => {
       {!isLoading && insights.length > 0 && (
         <div className="space-y-6">
           {/* Header with timestamp and refresh */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-600">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white/50 dark:bg-black rounded-xl border border-gray-200 dark:border-gray-600">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
               <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">

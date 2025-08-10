@@ -111,7 +111,7 @@ const AIInsights = () => {
       case "info":
         return "ℹ️";
       default:
-        return <FaRobot />;
+        return "🤖";
     }
   };
 
@@ -162,94 +162,97 @@ const AIInsights = () => {
   };
 
   return (
-    <div className="bg-white/80 min-h-screen dark:bg-black backdrop-blur-sm p-4 sm:p-6  shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl">
-      <div className="flex flex-col justify-center w-full items-center">
-        <span>
+    <div className="bg-white/80 dark:bg-black/80 backdrop-blur-sm min-h-screen p-4 sm:p-6 shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
+      {/* Header Section */}
+      <div className="flex flex-col justify-center w-full items-center mb-8">
+        <div className="text-4xl sm:text-5xl mb-4 text-emerald-600 dark:text-emerald-400">
           <FaRobot />
-        </span>
-        <h3 className="text-lg text-center sm:text-4xl  text-gray-900 dark:text-gray-100">
-          Your Personalized AI Assitant
+        </div>
+        <h3 className="text-xl sm:text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-2">
+          Your Personalized AI Assistant
         </h3>
-        <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-0.5">
+        <p className="text-sm text-center text-gray-600 dark:text-gray-400 mb-8">
           Analyzing your spending patterns
         </p>
         <button
           onClick={loadInsights}
-          className="px-3 py-1.5 bg-black mt-20 hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
+          disabled={isLoading}
+          className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <span className="sm:hidden">Generate</span>
-          <span className="hidden sm:inline">Generate your reports</span>
+          {isLoading ? (
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+              <span>Generating...</span>
+            </div>
+          ) : (
+            <>
+              <span className="sm:hidden">Generate</span>
+              <span className="hidden sm:inline">Generate your reports</span>
+            </>
+          )}
         </button>
       </div>
 
-      {isLoading ? (
-        <div className=" dark:bg-black backdrop-blur-sm p-4 sm:p-6   dark:border-gray-700/50">
-          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-            <div className="flex items-center gap-1 sm:gap-2">
-              <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
-              <span className="text-xs sm:text-sm text-emerald-600 dark:text-emerald-400 font-medium hidden sm:block">
-                Analyzing...
-              </span>
-            </div>
+      {/* Loading State */}
+      {isLoading && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-8 h-8 border-3 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
+            <span className="text-lg text-emerald-600 dark:text-emerald-400 font-semibold">
+              Analyzing your data...
+            </span>
           </div>
 
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-4">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="animate-pulse bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 p-3 sm:p-4 rounded-xl border border-gray-100 dark:border-gray-600"
+                className="animate-pulse bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border border-gray-200 dark:border-gray-600"
+                style={{ animationDelay: `${i * 0.2}s` }}
               >
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 dark:bg-gray-600 rounded-lg"></div>
-                  <div className="flex-1 space-y-2">
-                    <div className="h-3 bg-gray-200 dark:bg-gray-600 dark:text-green-500   rounded-lg w-3/4"></div>
-                    <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-full"></div>
-                    <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded-lg w-2/3"></div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-gray-300 dark:bg-gray-600 rounded-xl"></div>
+                  <div className="flex-1 space-y-3">
+                    <div className="h-4 bg-gray-300 dark:bg-gray-600 rounded-lg w-3/4"></div>
+                    <div className="h-3 bg-gray-300 dark:bg-gray-600 rounded-lg w-full"></div>
+                    <div className="h-3 bg-gray-300 dark:bg-gray-600 rounded-lg w-2/3"></div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700 text-center">
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <div className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
-            </div>
-          </div>
         </div>
-      ) : (
-        <div className="mt-20">
-          <div className="flex items-center justify-between mb-4 sm:mb-6">
-            <div className="flex items-center  gap-2 sm:gap-3">
-              <div className="flex flex-col justify-center w-full items-center">
-                {!isLoading && (
-                  <h3 className="text-lg text-center   text-gray-900 dark:text-gray-100">
-                    Your reports will appear here
-                  </h3>
-                )}
-              </div>
+      )}
+
+      {/* Results Section */}
+      {!isLoading && insights.length > 0 && (
+        <div className="space-y-6">
+          {/* Header with timestamp and refresh */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white/50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-600">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                AI Insights Generated
+              </h4>
             </div>
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full text-xs font-medium">
-                <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
-                <span className="hidden sm:inline">{formatLastUpdated()}</span>
-                <span className="sm:hidden">
-                  {formatLastUpdated().includes("ago")
-                    ? formatLastUpdated().replace(" ago", "")
-                    : formatLastUpdated()}
-                </span>
+            <div className="flex items-center gap-3">
+              <div className="inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 px-3 py-1.5 rounded-full text-sm font-medium">
+                <span className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+                <span>Updated {formatLastUpdated()}</span>
               </div>
               <button
                 onClick={loadInsights}
-                className="px-3 py-1.5 bg-black hover:from-emerald-700 hover:via-green-600 hover:to-teal-600 text-white rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-200"
+                disabled={isLoading}
+                className="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50"
               >
-                <span className="sm:hidden">Refresh</span>
                 <span className="hidden sm:inline">Refresh Insights</span>
+                <span className="sm:hidden">Refresh</span>
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-3 sm:gap-4">
+          {/* Insights Grid */}
+          <div className="grid grid-cols-1 gap-6">
             {insights.map((insight) => {
               const currentAnswer = aiAnswers.find(
                 (a) => a.insightId === insight.id
@@ -258,83 +261,87 @@ const AIInsights = () => {
               return (
                 <div
                   key={insight.id}
-                  className={`relative overflow-hidden rounded-xl p-3 sm:p-4 border hover:shadow-lg transition-all duration-200 `}
+                  className={`relative overflow-hidden rounded-2xl p-6 border-2 hover:shadow-xl transition-all duration-300 ${getInsightColors(
+                    insight.type
+                  )}`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                      <div className="flex items-center gap-4 mb-4">
                         <div
-                          className={`w-6 h-6 sm:w-8 sm:h-8 rounded-xl flex items-center justify-center ${
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${
                             insight.type === "warning"
-                              ? "bg-yellow-100 dark:bg-yellow-900/50"
+                              ? "bg-yellow-200 dark:bg-yellow-800"
                               : insight.type === "success"
-                              ? "bg-green-100 dark:bg-green-900/50"
+                              ? "bg-green-200 dark:bg-green-800"
                               : insight.type === "tip"
-                              ? "bg-emerald-100 dark:bg-emerald-900/50"
-                              : "bg-emerald-100 dark:bg-emerald-900/50"
+                              ? "bg-emerald-200 dark:bg-emerald-800"
+                              : "bg-emerald-200 dark:bg-emerald-800"
                           }`}
                         >
-                          <span className="text-sm sm:text-lg">
-                            {getInsightIcon(insight.type)}
-                          </span>
+                          {getInsightIcon(insight.type)}
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-gray-900 dark:text-gray-100 text-sm mb-0.5">
-                            {insight.title}
-                          </h4>
-                          {insight.confidence && insight.confidence < 0.8 && (
-                            <span className="inline-block px-2 py-0.5 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-medium">
-                              Preliminary
-                            </span>
-                          )}
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="font-bold text-gray-900 dark:text-gray-100 text-lg">
+                              {insight.title}
+                            </h4>
+                            {insight.confidence && insight.confidence < 0.8 && (
+                              <span className="inline-block px-2 py-1 bg-yellow-200 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 rounded-full text-xs font-semibold">
+                                Preliminary
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
-                      <p className="text-gray-700 dark:text-gray-300 text-xs leading-relaxed mb-3">
+
+                      <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed mb-4">
                         {insight.message}
                       </p>
+
                       {insight.action && (
-                        <div className="text-left">
-                          <span
+                        <div className="mb-4">
+                          <button
                             onClick={() => handleActionClick(insight)}
-                            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-xs cursor-pointer transition-all duration-200 ${getButtonColors(
+                            className={`inline-flex items-center gap-3 px-4 py-2 rounded-xl font-semibold text-sm cursor-pointer transition-all duration-200 ${getButtonColors(
                               insight.type
-                            )} hover:bg-white/50 dark:hover:bg-gray-700/50 ${
+                            )} hover:bg-white/80 dark:hover:bg-gray-700/80 border-2 border-current ${
                               currentAnswer
-                                ? "bg-white/50 dark:bg-gray-700/50"
-                                : ""
+                                ? "bg-white/80 dark:bg-gray-700/80"
+                                : "bg-white/40 dark:bg-gray-700/40"
                             }`}
                           >
                             <span>{insight.action}</span>
                             {currentAnswer?.isLoading ? (
-                              <div className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+                              <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
                             ) : (
-                              <span className="text-xs">
-                                {currentAnswer ? "↑" : "→"}
+                              <span className="text-sm font-bold">
+                                {currentAnswer ? "▲" : "▶"}
                               </span>
                             )}
-                          </span>
+                          </button>
                         </div>
                       )}
 
                       {/* AI Answer Display */}
                       {currentAnswer && (
-                        <div className="mt-3 p-3 bg-white/70 dark:bg-gray-700/70 backdrop-blur-sm rounded-lg border border-gray-200 dark:border-gray-600">
-                          <div className="flex items-start gap-2">
-                            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                              <span className="text-white text-xs">🤖</span>
+                        <div className="mt-4 p-4 bg-white/90 dark:bg-gray-700/90 backdrop-blur-sm rounded-xl border-2 border-gray-200 dark:border-gray-600 shadow-inner">
+                          <div className="flex items-start gap-3">
+                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0 shadow-md">
+                              <span className="text-white text-sm">🤖</span>
                             </div>
                             <div className="flex-1">
-                              <h5 className="font-semibold text-gray-900 dark:text-gray-100 text-xs mb-1">
-                                AI Answer:
+                              <h5 className="font-bold text-gray-900 dark:text-gray-100 text-sm mb-2">
+                                AI Analysis:
                               </h5>
                               {currentAnswer.isLoading ? (
-                                <div className="space-y-1">
-                                  <div className="animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-full"></div>
-                                  <div className="animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-3/4"></div>
-                                  <div className="animate-pulse bg-gray-200 dark:bg-gray-600 h-2 rounded-lg w-1/2"></div>
+                                <div className="space-y-2">
+                                  <div className="animate-pulse bg-gray-300 dark:bg-gray-600 h-3 rounded-lg w-full"></div>
+                                  <div className="animate-pulse bg-gray-300 dark:bg-gray-600 h-3 rounded-lg w-3/4"></div>
+                                  <div className="animate-pulse bg-gray-300 dark:bg-gray-600 h-3 rounded-lg w-1/2"></div>
                                 </div>
                               ) : (
-                                <p className="text-gray-700 dark:text-gray-300 text-xs leading-relaxed">
+                                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                                   {currentAnswer.answer}
                                 </p>
                               )}
@@ -349,15 +356,30 @@ const AIInsights = () => {
             })}
           </div>
 
-          <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-              <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <span className="font-medium text-xs">
-                  Powered by AI analysis
+          {/* Footer */}
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                <span className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+                <span className="font-medium">
+                  Powered by Advanced AI Analysis
                 </span>
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Empty State */}
+      {!isLoading && insights.length === 0 && lastUpdated && (
+        <div className="text-center py-12">
+          <div className="text-6xl mb-4">🤖</div>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+            No insights available
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Click "Generate your reports" to get AI-powered insights
+          </p>
         </div>
       )}
     </div>

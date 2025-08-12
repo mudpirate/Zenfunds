@@ -1,25 +1,88 @@
-start 
+Getting Started
 
-install next js npx create-next-app@latest or npx create-next-app@latest . (if folder is already there ) then npm run dev to run the server
-page.tsx is homepage. add extensions  like prisma ,tailwindcss intellisense. setup git and push the commits using sidebar of cursor github
+Install Next.js:
+bashnpx create-next-app@latest
+# Or if the folder already exists:
+npx create-next-app@latest .
+Then run the development server:
+bashnpm run dev
 
-now install prisma and neon 
+Initial Setup:
 
-make a new project and get connection string and add it to env. add it in gitignore nodemodules and env 
-install prisma npm i -D (dev dependaries) prisma then initialize it npx prisma init to make env file and a folder for models in root directory and delete the output in generator client it can cause problems 
-now make model in this app i make user for login and record for keeping records 
-@@ index for faster filtering like where {userId : "user_123"}
-then npx prisma generate , npx prisma migrate dev (to push table in neon). db.ts to make prisma client single instance 
+page.tsx is your homepage
+Install useful extensions like Prisma and Tailwind CSS IntelliSense
+Set up Git and push commits using Cursor's GitHub sidebar integration
 
-clerk authetication 
+Database Setup with Prisma and Neon
 
-sign in and create application and name it then choose framework and install the commands and make a middleware in route.ts then clerk provider wrap it in the layout now make sign in and sign up pages and then add env variables of routes and when we sign in the data goes to neon DB studio
+Create Neon Project:
 
-now make navbar 
+Make a new project in Neon
+Get the connection string and add it to your .env file
+Add node_modules and .env to .gitignore
 
-make a client component with a User button from clerk add some styles and hide navbar from some layouts like dashboard by using pathname hook and make it client side layout 
-now make dashboard pages with a layout of sidebar outside 
+Install and Configure Prisma:
+bash# Install Prisma as a dev dependency
+npm i -D prisma
 
-#css tricks 
+# Initialize Prisma
+npx prisma init
+This creates an .env file and a folder for models in your root directory. Remove the output field in the generator client as it can cause problems.
+Create Models:
+In this app, I create a User model for authentication and a Record model for storing data:
+prismamodel User {
+  id String @id @default(cuid())
+  // other fields
+  @@index([userId]) // For faster filtering like where {userId: "user_123"}
+}
+Generate and Migrate:
+bashnpx prisma generate
+npx prisma migrate dev  # Pushes tables to Neon
+Create db.ts to make a single Prisma client instance.
+Clerk Authentication
+Setup Clerk:
 
-make the outside container max-w-7xl ad give a width of full view port  and use px-10 then make div inside it and give w-full
+Sign in to Clerk and create an application
+Name your application and choose Next.js as your framework
+Install the required packages using the provided commands
+Create middleware.ts in your root directory
+Wrap your app with ClerkProvider in layout.tsx
+Create sign-in and sign-up pages
+Add environment variables for routes
+When users sign in, their data syncs with your Neon database
+
+Navigation Components
+Create Navbar:
+
+Make it a client component with Clerk's UserButton
+Add styling and responsive design
+Hide the navbar from certain layouts (like dashboard) using the usePathname hook
+Convert to client-side layout when needed
+
+Dashboard Layout:
+Create dashboard pages with a layout that includes a sidebar.
+CSS Styling Tips
+For consistent layouts:
+
+Use max-w-7xl on the outer container
+Give it w-full (full viewport width)
+Add px-10 for padding
+Create an inner div with w-full
+
+Page Components
+Home Page:
+
+Create a hero section with two buttons: "Dashboard" and "AI Assistant"
+Render using a client component
+Mix server and client components as needed
+Use Clerk's useUser hook to destructure isSignedIn
+On button click, if the user is signed in, use router.push() to navigate (similar to React's navigate)
+
+Dashboard Pages:
+
+Create a layout with a sidebar
+Remove the navbar from dashboard pages using usePathname() to get the current route
+Check if hiddenRoutes includes the current pathname to conditionally hide components
+
+add transaction
+we need to make a client component with all form inpur and send it to the server action by imorting them and formdata is a object and add errors and catch  and in addexpense server action we need to import the formd ata nad parse it to type using ts and then use try catch and send the data to the db using queries then return it through a object and use it in client component of dashboard

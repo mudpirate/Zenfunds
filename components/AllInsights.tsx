@@ -165,19 +165,19 @@ const AIInsights = () => {
     <div className="bg-white/80 dark:bg-black backdrop-blur-sm min-h-screen p-4 sm:p-6 shadow-xl border border-gray-100/50 dark:border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
       {/* Header Section */}
       <div className="flex flex-col justify-center w-full items-center mb-8">
-        <div className="text-4xl sm:text-5xl mb-4 text-emerald-600 dark:text-emerald-400">
+        <div className="text-4xl sm:text-5xl mb-4 text-black dark:text-emerald-400">
           <FaRobot />
         </div>
         <h3 className="text-xl sm:text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-2">
-          Your Personalized AI Assistant
+          AI Finance Assitant
         </h3>
         <p className="text-sm text-center text-gray-600 dark:text-gray-400 mb-8">
-          Analyzing your spending patterns
+          Analyzing your spending patterns and get feedback for your spendings
         </p>
         <button
           onClick={loadInsights}
           disabled={isLoading}
-          className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-6 py-3 bg-black hover:from-emerald-700 hover:to-teal-700 text-white rounded-xl font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isLoading ? (
             <div className="flex items-center gap-2">
@@ -197,9 +197,8 @@ const AIInsights = () => {
       {isLoading && (
         <div className="space-y-6">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-8 h-8 border-3 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin"></div>
-            <span className="text-lg text-emerald-600 dark:text-emerald-400 font-semibold">
-              Analyzing your data...
+            <span className="text-lg text-black dark:text-emerald-400 font-semibold">
+              Analyzing your data.........
             </span>
           </div>
 
@@ -232,12 +231,12 @@ const AIInsights = () => {
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-pulse"></div>
               <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                AI Insights Generated
+                AI Reports Generated
               </h4>
             </div>
             <div className="flex items-center gap-3">
-              <div className="inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 px-3 py-1.5 rounded-full text-sm font-medium">
-                <span className="w-2 h-2 bg-emerald-500 dark:bg-emerald-400 rounded-full"></span>
+              <div className="inline-flex items-center gap-2 bg-black dark:bg-emerald-900/50 text-white dark:text-emerald-300 px-3 py-1.5 rounded-full text-sm font-medium">
+                <span className="w-2 h-2 bg-white dark:bg-emerald-400 rounded-full"></span>
                 <span>Updated {formatLastUpdated()}</span>
               </div>
               <button

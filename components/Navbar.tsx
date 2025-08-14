@@ -19,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="  flex justify-center bg-green-50 w-full pt-3  dark:bg-black ">
+    <div className="  flex justify-center  w-full pt-3  dark:bg-black ">
       <nav className="top-0 max-w-6xl w-[90vw] ml-6  z-50 border-2  border-gray-200 rounded-3xl bg-white  dark:bg-black backdrop-blur-xl   dark:border-white shadow-lg shadow-gray-900/5 dark:shadow-black/30">
         <div className="max-w-6xl  mx-auto px-8  sm:px-10 lg:px-12">
           <div className="flex items-center justify-between h-14  sm:h-17">

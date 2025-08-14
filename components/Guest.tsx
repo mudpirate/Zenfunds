@@ -34,9 +34,9 @@ const Guest = () => {
   }, [router]);
 
   return (
-    <div className="font-sans  bg-white  dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
+    <div className="font-sans   dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen transition-all duration-300">
       {/* Hero Section */}
-      <section className="bg-green-50  dark:bg-black py-16 px-4 sm:px-6 lg:px-8">
+      <section className=" dark:bg-black py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">
             Track. <span className="text-green-500">Learn.</span> Grow.

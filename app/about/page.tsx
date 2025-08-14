@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <div className="font-sans  dark:from-gray-900 dark:via-gray-800 dark:to-emerald-900/20 text-gray-800 dark:text-gray-200 transition-all duration-300 min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-green-50 dark:bg-black">
+      <section className="relative overflow-hidden flex flex-col items-center justify-center text-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8  dark:bg-black">
         <div className="relative z-10 max-w-4xl mx-auto w-full">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">
             About <span className="text-green-500">Us</span>
@@ -18,7 +18,7 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-white dark:bg-black backdrop-blur-sm relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8  dark:bg-black backdrop-blur-sm relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-gray-100 px-2 sm:px-0">
             Transforming Financial Management with{" "}
@@ -61,7 +61,7 @@ const AboutPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-8 bg-white dark:bg-black ">
+      <section className="py-20 px-8  dark:bg-black ">
         <div className="max-w-6xl mx-auto ">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
@@ -122,7 +122,7 @@ const AboutPage = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 px-8 bg-white dark:bg-black backdrop-blur-sm relative overflow-hidden">
+      <section className="py-20 px-8  dark:bg-black backdrop-blur-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/5 to-green-500/5 rounded-full blur-2xl"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-teal-500/5 to-emerald-500/5 rounded-full blur-2xl"></div>
 
@@ -197,7 +197,7 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 px-8 bg-white  dark:bg-black relative overflow-hidden">
+      <section className="py-20 px-8  dark:bg-black relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-gray-100">
             Take Control of Your{" "}
